@@ -35,7 +35,7 @@ minetest.register_node("bamboo:bamboo_top", {
   description = "bamboo",
   drawtype = "plantlike",
   sunlight_propagates = true,
-  visual_scale = 1.4,
+  visual_scale = 1.7,
   paramtype = "light",
   walkable = false,
   groups = { snappy = 3,flammable=2, attached_node=1},
@@ -62,12 +62,14 @@ minetest.register_node("bamboo:bamboo", {
   tile_images = {"bamboo.png"},
   inventory_image = "bamboo.png",
   description = "Bamboo",
-  drawtype = "plantlike",
+  drawtype = "nodebox",
   node_box = {
     type = "fixed",
     fixed = {
-      {-5/16, -0.5, -5/16, -2/16, 0.5, -2/16},  
+      {-5/16, -0.5, -5/16, -2/16, 0.5, -2/16},
       {5/16, -0.5, 5/16, 2/16, 0.5, 2/16},
+      {-5/16, 0.5, 5/16, -2/16, -0.5, 2/16},
+      {5/16, 0.5, -5/16, 2/16, -0.5, -2/16}
     },
   },
   selection_box = {
@@ -77,9 +79,9 @@ minetest.register_node("bamboo:bamboo", {
   sunlight_propagates = true,
   visual_scale = 1.0,
   paramtype = "light",
-  walkable = false,
-  groups = { snappy = 3,flammable=2, attached_node=1},
-  sounds = default.node_sound_leaves_defaults(),
+  walkable = true,
+  groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1, attached_node=1},
+  sounds = default.node_sound_wood_defaults(),
   drop = {
   max_items = 2,
   items = {
@@ -98,12 +100,14 @@ minetest.register_node("bamboo:bamboo_dry", {
   tile_images = {"bamboo_dry.png"},
   inventory_image = "bamboo_dry.png",
   description = "Bamboo",
-  drawtype = "plantlike",
+  drawtype = "nodebox",
   node_box = {
     type = "fixed",
     fixed = {
-      {-5/16, -0.5, -5/16, -2/16, 0.5, -2/16},  
+      {-5/16, -0.5, -5/16, -2/16, 0.5, -2/16},
       {5/16, -0.5, 5/16, 2/16, 0.5, 2/16},
+      {-5/16, 0.5, 5/16, -2/16, -0.5, 2/16},
+      {5/16, 0.5, -5/16, 2/16, -0.5, -2/16}
     },
   },
   selection_box = {
@@ -113,9 +117,9 @@ minetest.register_node("bamboo:bamboo_dry", {
   sunlight_propagates = true,
   visual_scale = 1.0,
   paramtype = "light",
-  walkable = false,
-  groups = { snappy = 3,flammable=2, attached_node=1},
-  sounds = default.node_sound_leaves_defaults(),
+  walkable = true,
+  groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1, attached_node=1},
+  sounds = default.node_sound_wood_defaults(),
   drop = {
   max_items = 2,
   items = {
