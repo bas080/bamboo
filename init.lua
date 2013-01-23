@@ -87,7 +87,7 @@ minetest.register_node("bamboo:bamboo", {
   items = {
     {
       items = {'bamboo:sapling'},
-      rarity = 5,
+      rarity = 3,
       },
       {
       items = {"bamboo:item"},
@@ -125,7 +125,7 @@ minetest.register_node("bamboo:bamboo_dry", {
   items = {
     {
       items = {'bamboo:sapling'},
-      rarity = 10,
+      rarity = 6,
       },
       {
       items = {"bamboo:item_dry"},
