@@ -77,7 +77,6 @@ minetest.register_node("bamboo:bamboo", {
     fixed = { -0.33, -0.5, -0.33, 0.33, 0.5, 0.33 },
   },
   sunlight_propagates = true,
-  visual_scale = 1.0,
   paramtype = "light",
   walkable = true,
   groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1, floored=1},
@@ -115,7 +114,6 @@ minetest.register_node("bamboo:bamboo_dry", {
     fixed = { -0.33, -0.5, -0.33, 0.33, 0.5, 0.33 },
   },
   sunlight_propagates = true,
-  visual_scale = 1.0,
   paramtype = "light",
   walkable = true,
   groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1, floored=1},
@@ -206,6 +204,17 @@ minetest.register_node("bamboo:block_dry", {
 	is_ground_content = true,
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
 	sounds = default.node_sound_wood_defaults(),
+})
+
+plantslib:spawn_on_surfaces({
+  spawn_plants = {"bamboo:bamboo_top"},
+  spawn_delay = 30,
+  avoid_nodes = {"bamboo:bamboo_dry", "bamboo:bamboo", "group:wood", "group:leafdecay"},
+  avoid_radius = 15,
+  near_nodes_vertical = 4,
+  seed_diff = 420,
+  spawn_chance = 30,
+  spawn_surfaces = {"default:dirt_with_grass"},
 })
 
 print("[Bamboo] Loaded!")
