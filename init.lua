@@ -206,15 +206,6 @@ minetest.register_node("bamboo:block_dry", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-plantslib:spawn_on_surfaces({
-  spawn_plants = {"bamboo:bamboo_top"},
-  spawn_delay = 30,
-  avoid_nodes = {"bamboo:bamboo_dry", "bamboo:bamboo", "group:wood", "group:leafdecay"},
-  avoid_radius = 15,
-  near_nodes_vertical = 4,
-  seed_diff = 420,
-  spawn_chance = 30,
-  spawn_surfaces = {"default:dirt_with_grass"},
-})
+habitat:generate("bamboo:bamboo_top", "default:dirt_with_grass", minp, maxp, 2, 60, 2, 4, {"default:water_source"},0,{"default:papyrus"})
 
 print("[Bamboo] Loaded!")
