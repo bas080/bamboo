@@ -206,6 +206,6 @@ minetest.register_node("bamboo:block_dry", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-habitat:generate("bamboo:bamboo_top", "default:dirt_with_grass", minp, maxp, 2, 60, 2, 4, {"default:water_source"},0,{"default:papyrus"})
+habitat:generate("bamboo:bamboo_top", "default:dirt_with_grass", minp, maxp, 10, 40, 2, 4, {"default:water_source"},30,{"default:papyrus", "default:wood"})
 
 print("[Bamboo] Loaded!")
