@@ -56,6 +56,26 @@ minetest.register_node("bamboo:bamboo_top", {
       }
     }
   },
+  on_construct = function(pos, placer)
+    local p = {x=pos.x, y=pos.y, z=pos.z}
+    local n = minetest.env:get_node(p)
+    local down=1
+    
+    local height=2+math.random(0,average_height)
+    
+    minetest.env:set_node(p, {name="bamboo:bamboo"})
+    
+    while down < height do
+      local pt = {x = p.x, y= p.y+down, z=p.z}
+      local nt = minetest.env:get_node(pt)
+      if nt.name == "air" then
+        minetest.env:add_node(pt, {name="bamboo:bamboo"})
+        down=down+1
+      else
+        return
+      end
+    end
+  end,
 })
 
 minetest.register_node("bamboo:bamboo", {
@@ -147,6 +167,7 @@ minetest.register_node("bamboo:sapling", {
     type = "fixed",
     fixed = { -0.25, -0.5, -0.25, 0.25, 0.5, 0.25 },
   },
+  
 })
 
 minetest.register_abm({
